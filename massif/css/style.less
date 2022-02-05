@@ -1,0 +1,382 @@
+@darker-color: #000;
+@lighter-color: #ffffff;
+@text-color: #6887a2;
+@primary-color: #e5f5e5;
+@secondary-color: #28abb9;
+@tertiary-color: #a8dda8;
+
+@font-family: "Roboto", sans-serif;
+@font-glyphe: "Playfair Display", serif;
+@font-size: 100%;
+
+@avatar-size: 6rem;
+/*----------------------------------mixins*/
+.center(@width: 60%) {
+  width: @width;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bcgimg(@size: cover) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: @size;
+}
+
+/*-------------------------------------reset*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+html {
+  font-size: @font-size;
+  font-family: @font-family;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+img,
+video,
+canvas,
+figure,
+audio,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:visited {
+  color: @darker-color;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+/*-------------------------------------layout*/
+h1,
+p {
+  color: @text-color;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: 0.5rem;
+}
+
+h3 {
+  font-family: @font-glyphe;
+  font-weight: 200;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+  color: @lighter-color;
+  margin-bottom: 1rem;
+}
+
+header > div > nav,
+nav > ul,
+.apropos > div,
+.chambres > div div,
+.services div,
+.avis > div > div {
+  .flex;
+}
+
+.logo {
+  width: 8.125rem;
+  height: 2.5rem;
+  display: block;
+  margin-right: auto;
+  text-indent: -9999px;
+  background-image: url("../imgs/logo.png");
+  .bcgimg;
+}
+
+header {
+  > div {
+    .center;
+    nav {
+      padding: 2rem 0;
+      align-items: center;
+      line-height: 2.5rem;
+      ul {
+        li {
+          a,
+          a:visited {
+            color: @lighter-color;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 0 0.8rem;
+            border-bottom: 1px solid transparent;
+            transition: 0.2s;
+            &:hover{
+              border-bottom: 1px solid @lighter-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  > div {
+    img {
+      padding: 3rem;
+    }
+  }
+  h1 {
+    color: @lighter-color;
+  }
+}
+
+header {
+  background-image: url("../imgs/bcgHeader.jpg");
+  color: @lighter-color;
+  .bcgimg;
+  > div {
+    > div {
+      padding: 8rem;
+    }
+  }
+}
+
+section {
+  padding: 3rem 0;
+  > div {
+    .center;
+  }
+}
+
+.apropos,
+.avis {
+  article {
+    text-align: left;
+    a {
+      transition: 0.2s;
+      span,
+      img {
+        display: block;
+      }
+      .flex;
+      width: fit-content;
+      padding: 0.5rem 1rem;
+      border: 1px solid @darker-color;
+      line-height: 2rem;
+      img {
+        width: 2rem;
+        margin-left: 1.5rem;
+      }
+
+      &:hover {
+        transform: translateX(1rem);
+      }
+    }
+  }
+  article {
+    width: calc(50% - 2rem);
+  }
+}
+
+.apropos {
+  img {
+    border-bottom-left-radius: 1rem;
+  }
+}
+
+.apropos {
+  padding: 6rem 0;
+  div {
+    justify-content: space-between;
+  }
+}
+
+.chambres {
+  background-color: @primary-color;
+  > div {
+    justify-content: center;
+    > div {
+      width: 100%;
+      justify-content: space-between;
+    }
+    figure {
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.services {
+  > div {
+    div {
+      justify-content: space-between;
+      article {
+        text-align: left;
+        padding: 2.5rem 1.5rem;
+        width: calc(33.3% - 2rem);
+        border: 2px solid @secondary-color;
+        border-bottom-left-radius: 1rem;
+        img {
+          max-height: 2rem;
+          display: block;
+          margin-bottom: 1rem;
+        }
+        h3 {
+          margin-bottom: 1rem;
+        }
+        p {
+          color: @darker-color;
+          font-weight: 200;
+        }
+      }
+    }
+  }
+}
+
+.push {
+  background-image: url("../imgs/bcgBottom.jpg");
+  .bcgimg;
+
+  p {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    background-color: @secondary-color;
+    border-radius: 0.5rem;
+    box-shadow: -4px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  p,
+  a {
+    color: @lighter-color;
+  }
+}
+
+.avatar {
+  width: @avatar-size;
+  height: @avatar-size;
+  margin-top: calc(@avatar-size / -2);
+  .bcgimg;
+  background-image: url("../imgs/Edward.jpg");
+  border: 3px solid @tertiary-color;
+  border-radius: 100%;
+  box-shadow: -4px 5px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.avis {
+  div {
+    justify-content: space-between;
+    article {
+      margin-top: 4rem;
+      background-color: @tertiary-color;
+      position: relative;
+      width: calc(50% - 2rem);
+      padding: 0 1.5rem 1.5rem;
+      img {
+        display: block;
+        margin-bottom: 1rem;
+      }
+      img:last-of-type {
+        margin: 0;
+        transform: scale(-1);
+        position: absolute;
+        right: 1.5rem;
+        bottom: 1.5rem;
+      }
+      p:last-of-type{
+        margin: 0;
+      }
+      &:last-of-type {
+        .avatar {
+          background-image: url("../imgs/Mike.jpg");
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header,
+  section {
+    > div {
+      .center(95%);
+    }
+  }
+  header {
+    > div {
+      nav {
+        justify-content: center;
+        ul {
+          li {
+            a {
+              font-size: 80%;
+            }
+          }
+        }
+      }
+      > div {
+        padding: 2rem;
+      }
+    }
+  }
+  .logo {
+    margin-right: 0;
+  }
+  article {
+    min-width: 100%;
+  }
+  .apropos {
+    > div {
+      > img {
+        min-width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .services {
+    > div {
+      justify-content: center;
+      article {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .chambres {
+    > div {
+      > div {
+        justify-content: center;
+      }
+    }
+  }
+}

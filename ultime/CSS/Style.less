@@ -1,0 +1,368 @@
+@darker-color: #111111;
+@lighter-color: #ffffff;
+@primary-color: #f1720b;
+@secondary-color: #421e09;
+@grey-text: #c1c1c1;
+
+@font-family: "Roboto Mono", monospace;
+@font-size: 100%;
+/*----------------------------------mixins*/
+.center(@width: 60%) {
+  width: @width;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bcg_img(@size: cover, @position: center) {
+  background-size: @size;
+  background-position: @position;
+  background-repeat: no-repeat;
+}
+
+/*-------------------------------------reset*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+html {
+  font-size: @font-size;
+  font-family: @font-family;
+  scroll-behavior: smooth;
+}
+
+img,
+video,
+canvas,
+figure,
+audio,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:visited {
+  color: @lighter-color;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+/*-------------------------------------layout*/
+nav,
+section {
+  > div {
+    .center;
+    .flex;
+  }
+  h1 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: @grey-text;
+    line-height: 2rem;
+    margin: 2rem 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    color: @primary-color;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  h4 {
+    text-align: left;
+    font-size: 8rem;
+    color: @primary-color;
+    width: 100%;
+    margin: 2rem 0;
+  }
+}
+i {
+  color: @primary-color;
+  width: 100%;
+  padding: 0.4rem;
+}
+svg {
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+article {
+  text-align: left;
+}
+
+.btn {
+  width: fit-content;
+  display: block;
+  padding: 0.8rem;
+  background-color: @primary-color;
+  transition: 0.2s;
+  &:hover {
+    background-color: @secondary-color;
+    transform: scale(1.1);
+  }
+}
+
+nav {
+  text-align: center;
+  > div {
+    justify-content: space-between;
+    line-height: 3rem;
+    ul {
+      .flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        display: block;
+        padding: 0.8rem;
+        i {
+          color: @lighter-color;
+          background-color: @secondary-color;
+        }
+      }
+    }
+  }
+  &:nth-of-type(1) {
+    padding: 0.5rem 0;
+  }
+  &:last-of-type {
+    position: sticky;
+    top: 0;
+    background-color: @primary-color;
+    ul {
+      width: 100%;
+      li {
+        flex: 1;
+        border-bottom: 4px solid @primary-color;
+        transition: 0.3s;
+        &:hover {
+          background-color: @secondary-color;
+          border-bottom: 4px solid @lighter-color;
+        }
+      }
+    }
+  }
+  li {
+    font-weight: 600;
+  }
+}
+
+header {
+  height: 40vh;
+  background-image: url("../imgs/header.jpeg");
+  .bcg_img;
+}
+
+section {
+  padding: 4rem 0;
+  text-align: center;
+  &:nth-of-type(1) {
+    div {
+      justify-content: space-between;
+      margin-top: -7rem;
+      article {
+        .flex;
+        justify-content: space-between;
+        width: calc(50% - 2rem);
+        padding: 2rem;
+        background-image: url("../imgs/barefoot.jpeg");
+        border-top: 4px solid @primary-color;
+        color: @lighter-color;
+        .bcg_img;
+        p {
+          line-height: 1.5rem;
+          min-height: 8rem;
+        }
+
+        &:last-of-type {
+          background-image: url("../imgs/skysurf.jpg");
+        }
+      }
+    }
+  }
+  &:nth-of-type(2),
+  &:nth-of-type(3) {
+    > div {
+      .btn {
+        background-color: @secondary-color;
+        font-size: 1.8rem;
+        letter-spacing: 0.4rem;
+        padding: 0.8rem 1.8rem;
+
+        &:hover {
+          background-color: @primary-color;
+        }
+      }
+    }
+  }
+  &:nth-of-type(2) {
+    > div {
+      .center(40%);
+      justify-content: center;
+    }
+  }
+  &:nth-of-type(3) {
+
+    padding: 8rem 0;
+    background-image: url("../imgs/rugby.jpeg");
+    background-attachment: fixed;
+    .bcg_img;
+    > div {
+      .center;
+      h2 {
+        color: @lighter-color;
+      }
+    }
+  }
+  &:nth-of-type(4) {
+    > div {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      div {
+        .flex;
+        justify-content: space-between;
+        article {
+          width: calc(50% - 2rem);
+        }
+      }
+    }
+  }
+  &:nth-of-type(5) {
+    background-image: url("../imgs/bcgBottom.jpeg");
+    .bcg_img;
+    > div {
+      justify-content: space-between;
+      article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: calc(33% - 2rem);
+        padding: 1rem;
+        background-color: @grey-text;
+      }
+      i {
+        font-size: 5rem;
+      }
+    }
+  }
+  &:nth-of-type(6) {
+    > div {
+      h2{
+        margin: auto; 
+        margin-bottom: 2rem;
+      }
+      > p {
+        color: @grey-text;
+      }
+      div {
+        .flex;
+        justify-content: space-between;
+        article {
+          width: calc(50% - 2rem);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: @darker-color;
+  text-align: left;
+  > div {
+    .center;
+    padding: 4rem 0;
+    color: @lighter-color;
+    > div {
+      .flex;
+      margin-bottom: 2rem;
+      ul {
+        margin-left: 3rem;
+      }
+      a {
+        color: @primary-color;
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html{
+    font-size: 75%;
+  }
+
+  nav {
+    > div {
+      .center(100%);
+    }
+  }
+header{
+  .bcg_img(cover, 30%);
+}
+  section,
+  footer {
+    > div {
+      .center(95%);
+      article {
+        min-width: 100%;
+        margin-bottom: 2rem;
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+    }
+    
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      div {
+        .center(90%);
+      }
+    }
+  }
+  footer {
+    > div {
+      img {
+        margin-bottom: 2rem;
+      }
+      > div {
+        ul {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  html{
+    font-size: 62.5%;
+  }
+}

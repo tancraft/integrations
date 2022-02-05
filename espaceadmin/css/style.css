@@ -1,0 +1,194 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCp6KVjbNBYlgoKejZftWyI.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoC1CzTtw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgo6eA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoCjC3Ttw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoCxCvTtw.ttf) format('truetype');
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+html {
+  font-size: 100%;
+  font-family: "Ubuntu", sans-serif;
+  scroll-behavior: smooth;
+}
+img,
+video,
+canvas,
+figure,
+audio,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+a,
+a:visited {
+  color: #34373b;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+input {
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+body {
+  background-color: #eeeeee;
+}
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  max-width: 14rem;
+  background-color: #34373b;
+  box-shadow: 4px 0 2px rgba(52, 55, 59, 0.6);
+}
+.main-nav ul {
+  padding: 1rem 0;
+}
+.main-nav ul li {
+  border-bottom: 1px solid #4c4747;
+}
+.main-nav ul li a {
+  display: block;
+  padding: 0.5rem 2.5rem;
+}
+.main-nav ul li a:visited {
+  color: #eeeeee;
+}
+.main-nav ul li a::after {
+  content: "";
+}
+.main-nav ul li a span {
+  display: inline-block;
+  padding-left: 1rem;
+}
+.main-nav ul li a i {
+  text-align: center;
+  font-size: 1.5rem;
+  width: 1.5rem;
+}
+ > :not(.main-nav ul li:last-of-type) {
+  margin-bottom: 0.3rem;
+}
+.logo {
+  display: block;
+  padding: 0.5rem;
+  border-bottom: 1px solid #4c4747;
+}
+.logo svg {
+  fill: #eeeeee;
+}
+.main-content {
+  padding-left: 14rem;
+  width: 100%;
+}
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(0deg, rgba(76, 71, 71, 0.85) 16%, #4c4747 80%);
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar form {
+  box-shadow: inset -1px 1px 2px rgba(238, 238, 238, 0.3);
+  background-color: #34373b;
+  padding: 0.4rem 1.5rem;
+  border-radius: 0.3rem;
+}
+.topbar form input,
+.topbar form button {
+  display: inline-block;
+}
+.topbar form input {
+  font-size: 1.5rem;
+  height: 100%;
+  color: #eeeeee;
+}
+.topbar form button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  max-height: 1.5rem;
+}
+.topbar form button i {
+  font-size: 1.5rem;
+  color: #eeeeee;
+}
+.topbar .profil {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.topbar .profil img {
+  max-width: 3rem;
+  display: block;
+  border-radius: 50%;
+  box-shadow: -1px 1px 1px rgba(52, 55, 59, 0.6);
+  border: 1px solid #eeeeee;
+}
+.topbar .profil button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-left: 1rem;
+}
+.topbar .profil button svg {
+  display: block;
+  width: 1.3rem;
+  fill: #eeeeee;
+}

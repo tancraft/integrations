@@ -1,0 +1,593 @@
+/*----------------------------------mixins*/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*-------------------------------------reset*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+html {
+  font-size: 100%;
+  font-family: "Exo 2", sans-serif;
+  scroll-behavior: smooth;
+}
+img,
+video,
+canvas,
+figure,
+audio,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+a,
+a:visited {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+/*-------------------------------------layout*/
+.container {
+  background-color: #606060;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+h2 {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+h2 strong {
+  font-weight: 400;
+}
+h3 {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1rem;
+  max-width: 15%;
+  margin-bottom: 1rem;
+}
+h4 {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.logo {
+  padding: 1rem 2rem;
+  background-color: rgba(43, 43, 43, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+.logo:visited {
+  display: inline-block;
+  white-space: nowrap;
+  color: #ffffff;
+}
+.sociaux {
+  position: absolute;
+  bottom: 0;
+  background-color: #2b2b2b;
+  padding: 1.5rem;
+}
+.sociaux li a {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  border: 1px solid #606060;
+  transition: 0.3s;
+}
+.sociaux li a figure {
+  color: #606060;
+}
+.sociaux li a:hover {
+  border: 1px solid #c7a67d;
+}
+.sociaux li a:hover figure {
+  color: #c7a67d;
+}
+.sociaux li:last-of-type a {
+  margin-bottom: 0;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  transition: background-color 0.3s;
+}
+nav > div {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+nav > div ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav > div ul li a {
+  display: block;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  padding: 1rem 2rem;
+}
+nav > div ul li a:visited {
+  color: #ffffff;
+}
+nav > div ul li a::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 90%;
+  height: 2px;
+  background-color: #c7a67d;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transition: 0.3s;
+}
+nav > div ul li a:hover {
+  color: #c7a67d;
+}
+nav > div ul li a:hover::after {
+  transform: translateX(-50%) scale(1);
+}
+nav > div ul:first-of-type {
+  order: -1;
+}
+nav.scrolled {
+  background-color: #2b2b2b;
+}
+header {
+  position: relative;
+  padding: 8rem 0;
+  color: #ffffff;
+  background-image: url("../imgs/bcimg_header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+header > div {
+  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: flex-end;
+}
+header > div article {
+  width: 70%;
+}
+header > div article .btn {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  background-color: #c7a67d;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+header > div article .btn:visited {
+  color: #ffffff;
+}
+header > div article .btn i {
+  margin-left: 0.3rem;
+  transition: 0.2s;
+}
+header > div article .btn:hover {
+  background-color: #2b2b2b;
+  color: #c7a67d;
+}
+header > div article .btn:hover i {
+  transform: translateX(0.3rem);
+}
+section {
+  text-align: center;
+  padding: 3rem 0;
+  background-color: #c7a67d;
+}
+section h2 strong {
+  color: #2b2b2b;
+}
+section > div {
+  width: 60%;
+  margin: 0 auto;
+}
+section > div figure h2 strong {
+  color: #c7a67d;
+}
+section p {
+  color: #2b2b2b;
+  margin-bottom: 1rem;
+}
+section:nth-of-type(odd) {
+  background-color: #2b2b2b;
+}
+section:nth-of-type(odd) h2 strong {
+  color: #c7a67d;
+}
+section:nth-of-type(odd) p {
+  color: #ffffff;
+}
+section:nth-of-type(odd) p.cite {
+  color: #c7a67d;
+  padding-left: 3rem;
+  text-align: left;
+  border-left: 1px solid #c7a67d;
+}
+.hall div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hall div article {
+  width: 70%;
+  text-align: left;
+  padding-right: 1rem;
+}
+.hall div figure {
+  width: 30%;
+  position: relative;
+}
+.hall div figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hall div figure figcaption {
+  display: inline-block;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  left: 10%;
+  bottom: -0.6rem;
+  background-color: #c7a67d;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.project > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.project > div article {
+  width: 50%;
+  text-align: left;
+}
+.project > div article h2 strong {
+  display: block;
+  width: 100%;
+}
+.project > div article figure {
+  position: relative;
+  width: calc(50% - 1rem);
+  min-height: 20rem;
+  padding: 0.5rem;
+  background-image: url("../imgs/paris.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.project > div article figure figcaption {
+  position: absolute;
+  white-space: nowrap;
+  display: block;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  background-color: #2b2b2b;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+.project > div article figure:last-of-type {
+  background-image: url("../imgs/london-bis.jpg");
+}
+.project > div article:first-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.project > div article:last-of-type {
+  padding: 1rem;
+}
+.project > div article:last-of-type img {
+  display: block;
+}
+.services > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.services > div article {
+  padding: 0.4rem;
+  width: calc(25% - 2rem);
+  position: relative;
+}
+.services > div article :not(figure) {
+  text-align: left;
+}
+.services > div article p {
+  min-height: 20rem;
+}
+.services > div article figure {
+  color: #c7a67d;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.services > div article:last-of-type {
+  width: 40%;
+}
+.services > div article:last-of-type p {
+  text-align: right;
+}
+.services > div article:last-of-type figure {
+  border-top: 1px solid #c7a67d;
+  border-bottom: 1px solid #c7a67d;
+  margin-bottom: 2rem;
+}
+.services > div article .btn {
+  padding: 0.2rem 1rem 0.2rem 4rem;
+  text-transform: uppercase;
+  background-color: #606060;
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: 0.3s;
+  right: 0;
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.4rem;
+}
+.services > div article .btn:visited {
+  color: #c7a67d;
+}
+.services > div article .btn:hover {
+  background-color: #c7a67d;
+  color: #2b2b2b;
+}
+footer {
+  background-image: url("../imgs/bcg_bottom.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 0;
+}
+footer > div {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer > div > div {
+  background-color: rgba(43, 43, 43, 0.6);
+  width: 50%;
+}
+footer > div > div form {
+  min-height: 40vh;
+  padding: 0.5rem;
+}
+footer > div > div form .input {
+  padding: 0.4rem 0;
+  position: relative;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 0.5rem;
+}
+footer > div > div form .input input {
+  display: inline-block;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+footer > div > div form .input textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+footer > div > div form .input label {
+  display: inline-block;
+  color: #ffffff;
+}
+footer > div > div form .input:last-of-type {
+  margin-bottom: 2rem;
+}
+footer > div > div form .btn {
+  display: inline-block;
+  padding: 0.2rem 2rem;
+  border-radius: 1rem;
+  background-color: #c7a67d;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+footer > div > div form .btn:visited {
+  color: #ffffff;
+}
+footer > div > div form .btn:hover {
+  background-color: #606060;
+}
+footer > div > div h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+footer > div > div:first-of-type {
+  z-index: 1;
+  position: relative;
+  background-image: url("../imgs/bcg_form.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+}
+footer > div > div:first-of-type::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(199, 166, 125, 0.6);
+  z-index: -1;
+}
+@media screen and (max-width: 1500px) {
+  .hall > div,
+  .project > div,
+  .services > div,
+  header > div {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1340px) {
+  nav .logo:first-of-type {
+    order: -1;
+  }
+  nav > div ul,
+  nav > div .logo {
+    width: 100%;
+  }
+  nav > div ul {
+    justify-content: space-around;
+  }
+  header {
+    padding: 10rem 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .hall div {
+    justify-content: center;
+  }
+  .hall div article {
+    min-width: 100%;
+    order: 2;
+  }
+  .hall div article h3 {
+    max-width: 25%;
+  }
+  .hall div article .cite {
+    padding-left: 1.5rem;
+  }
+  .hall div figure {
+    width: 50%;
+    margin-bottom: 4rem;
+  }
+  .hall div figure figcaption {
+    display: block;
+  }
+  .project > div article {
+    justify-content: space-around;
+    min-width: 100%;
+  }
+  .project > div figure {
+    width: calc(50% - 3rem);
+  }
+  .services > div article {
+    min-width: 50%;
+  }
+  .services > div article p {
+    min-height: 15rem;
+  }
+  .services > div article:last-of-type {
+    min-width: 100%;
+  }
+  .services > div article:last-of-type p {
+    min-height: 0;
+  }
+  footer > div {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  h4 {
+    font-size: 2.1rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  .sociaux {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .sociaux li {
+    margin-left: 0.5rem;
+  }
+  .sociaux li a {
+    margin-bottom: 0;
+  }
+  .sociaux li:last-of-type a {
+    margin-bottom: 0;
+  }
+  nav > div ul li a {
+    font-size: 0.7rem;
+  }
+  header {
+    background-position: top right 80%;
+  }
+  header > div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .hall div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hall div article {
+    width: 70%;
+  }
+  .hall div article h3 {
+    max-width: 90%;
+  }
+  .hall div article .cite {
+    padding-left: 1.5rem;
+  }
+  .hall div figure {
+    width: 80%;
+  }
+  .hall div figure figcaption {
+    position: static;
+  }
+  .project > div article figure {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .services > div article {
+    min-width: 100%;
+  }
+  footer > div > div {
+    min-width: 100%;
+  }
+}

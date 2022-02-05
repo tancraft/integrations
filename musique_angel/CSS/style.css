@@ -1,0 +1,304 @@
+/*----------------------------------mixins*/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*-------------------------------------reset*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+  font-family: "Work Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+img,
+video,
+canvas,
+figure,
+audio,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+a,
+a:visited {
+  font-weight: 200;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+/*-------------------------------------layout*/
+nav,
+.container > :nth-child(3) .card,
+.container > :nth-child(4),
+.headphone .btn,
+footer {
+  background-color: #34373b;
+}
+h2,
+h3,
+h4,
+cite {
+  margin-bottom: 1rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+h2,
+h3 {
+  text-transform: uppercase;
+}
+a,
+a:visited,
+h2,
+strong {
+  color: #32e0c4;
+}
+cite {
+  display: block;
+  font-style: normal;
+  font-size: 3rem;
+  font-weight: 700;
+}
+h1,
+h4 {
+  font-size: 1rem;
+}
+h1 {
+  margin-bottom: 1.5rem;
+}
+nav {
+  padding: 1rem 0;
+}
+nav div {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+nav div ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 3rem;
+  line-height: 3rem;
+}
+nav div ul li a {
+  padding: 0 0.4rem;
+  margin-right: 1rem;
+  transition: scale 0.2s;
+}
+nav div ul li a:hover {
+  transform: scale(1.2);
+}
+nav div ul > :last-of-type {
+  border-right: 2px solid #eeeeee;
+}
+nav div .logo {
+  max-width: 30%;
+  margin-right: auto;
+}
+nav div a {
+  display: block;
+}
+nav div a:visited {
+  color: #eeeeee;
+}
+nav div .search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav div .search img {
+  margin: 1rem 1rem;
+}
+header img,
+.btn {
+  display: inline-block;
+}
+header {
+  padding: 10rem 0;
+  background-size: contain;
+  background-image: url("../imgs/header.jpg");
+  background-position: bottom;
+  color: #eeeeee;
+}
+header div {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+header img {
+  padding: 2rem;
+}
+.btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border: 1px solid #32e0c4;
+}
+.container > :nth-child(3) .card {
+  text-align: left;
+  color: #eeeeee;
+}
+.container > :nth-child(5) .card {
+  border: 2px solid #32e0c4;
+}
+section {
+  text-align: center;
+  padding: 4rem 0;
+}
+section > div {
+  width: 60%;
+  margin: 0 auto;
+}
+section .description {
+  color: #eeeeee;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+}
+section .description img {
+  display: block;
+}
+section .description div {
+  width: 50%;
+  padding-left: 2rem;
+}
+section .description h2 {
+  color: #eeeeee;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cards article {
+  width: calc(33% - 2rem);
+}
+.card {
+  padding: 1.5rem;
+}
+.card img {
+  margin-bottom: 1rem;
+}
+.card h3 {
+  font-weight: 700;
+}
+.card a {
+  display: block;
+  background-color: #32e0c4;
+  padding: 0.6rem;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  color: #eeeeee;
+}
+header,
+.headphone {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.headphone {
+  background-image: url("../imgs/headphone.jpg");
+  background-position: center;
+  padding: 8rem 0;
+}
+.headphone .btn {
+  font-weight: 500;
+}
+.headphone h2 {
+  color: #eeeeee;
+}
+.headphone p {
+  color: #eeeeee;
+  font-size: 3rem;
+  font-weight: 700;
+}
+footer {
+  padding: 4rem 0;
+}
+footer div {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+footer div .logo {
+  display: block;
+  margin-bottom: 1rem;
+}
+footer div ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+footer div ul li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  margin: 0 0.5rem;
+  width: 2rem;
+  border: 1px solid #7a7474;
+  border-radius: 50%;
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 80%;
+  }
+  nav > div,
+  header > div,
+  section > div,
+  footer > div {
+    width: 85%;
+    margin: 0 auto;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0.5rem 0.2rem rgba(52, 55, 59, 0.8);
+  }
+  nav ul li {
+    line-height: 2rem;
+  }
+  figure {
+    min-width: 100%;
+  }
+  figure img {
+    width: 100%;
+  }
+  section {
+    padding: 1rem;
+  }
+  section .description > div {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+  .cards article {
+    min-width: 100%;
+    margin: 0.6rem 0;
+  }
+  .headphone {
+    background-image: url("../imgs/headphone_small.jpg");
+  }
+  .headphone {
+    background-image: url("../imgs/headphone_small.jpg");
+  }
+}

@@ -1,0 +1,333 @@
+/*----------------------------------mixins*/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*-------------------------------------reset*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+html {
+  font-size: 100%;
+  font-family: "Roboto Mono", monospace;
+  scroll-behavior: smooth;
+}
+img,
+video,
+canvas,
+figure,
+audio,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+a,
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+/*-------------------------------------layout*/
+nav > div,
+section > div {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+nav h1,
+section h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #c1c1c1;
+  line-height: 2rem;
+  margin: 2rem 0;
+}
+nav h2,
+section h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  color: #f1720b;
+  margin-bottom: 1rem;
+}
+nav h3,
+section h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+nav h4,
+section h4 {
+  text-align: left;
+  font-size: 8rem;
+  color: #f1720b;
+  width: 100%;
+  margin: 2rem 0;
+}
+i {
+  color: #f1720b;
+  width: 100%;
+  padding: 0.4rem;
+}
+svg {
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+p {
+  margin-bottom: 2rem;
+}
+article {
+  text-align: left;
+}
+.btn {
+  width: fit-content;
+  display: block;
+  padding: 0.8rem;
+  background-color: #f1720b;
+  transition: 0.2s;
+}
+.btn:hover {
+  background-color: #421e09;
+  transform: scale(1.1);
+}
+nav {
+  text-align: center;
+}
+nav > div {
+  justify-content: space-between;
+  line-height: 3rem;
+}
+nav > div ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+nav > div ul a {
+  display: block;
+  padding: 0.8rem;
+}
+nav > div ul a i {
+  color: #ffffff;
+  background-color: #421e09;
+}
+nav:nth-of-type(1) {
+  padding: 0.5rem 0;
+}
+nav:last-of-type {
+  position: sticky;
+  top: 0;
+  background-color: #f1720b;
+}
+nav:last-of-type ul {
+  width: 100%;
+}
+nav:last-of-type ul li {
+  flex: 1;
+  border-bottom: 4px solid #f1720b;
+  transition: 0.3s;
+}
+nav:last-of-type ul li:hover {
+  background-color: #421e09;
+  border-bottom: 4px solid #ffffff;
+}
+nav li {
+  font-weight: 600;
+}
+header {
+  height: 40vh;
+  background-image: url("../imgs/header.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section {
+  padding: 4rem 0;
+  text-align: center;
+}
+section:nth-of-type(1) div {
+  justify-content: space-between;
+  margin-top: -7rem;
+}
+section:nth-of-type(1) div article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: calc(50% - 2rem);
+  padding: 2rem;
+  background-image: url("../imgs/barefoot.jpeg");
+  border-top: 4px solid #f1720b;
+  color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section:nth-of-type(1) div article p {
+  line-height: 1.5rem;
+  min-height: 8rem;
+}
+section:nth-of-type(1) div article:last-of-type {
+  background-image: url("../imgs/skysurf.jpg");
+}
+section:nth-of-type(2) > div .btn,
+section:nth-of-type(3) > div .btn {
+  background-color: #421e09;
+  font-size: 1.8rem;
+  letter-spacing: 0.4rem;
+  padding: 0.8rem 1.8rem;
+}
+section:nth-of-type(2) > div .btn:hover,
+section:nth-of-type(3) > div .btn:hover {
+  background-color: #f1720b;
+}
+section:nth-of-type(2) > div {
+  width: 40%;
+  margin: 0 auto;
+  justify-content: center;
+}
+section:nth-of-type(3) {
+  padding: 8rem 0;
+  background-image: url("../imgs/rugby.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section:nth-of-type(3) > div {
+  width: 60%;
+  margin: 0 auto;
+}
+section:nth-of-type(3) > div h2 {
+  color: #ffffff;
+}
+section:nth-of-type(4) > div {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section:nth-of-type(4) > div div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section:nth-of-type(4) > div div article {
+  width: calc(50% - 2rem);
+}
+section:nth-of-type(5) {
+  background-image: url("../imgs/bcgBottom.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section:nth-of-type(5) > div {
+  justify-content: space-between;
+}
+section:nth-of-type(5) > div article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(33% - 2rem);
+  padding: 1rem;
+  background-color: #c1c1c1;
+}
+section:nth-of-type(5) > div i {
+  font-size: 5rem;
+}
+section:nth-of-type(6) > div h2 {
+  margin: auto;
+  margin-bottom: 2rem;
+}
+section:nth-of-type(6) > div > p {
+  color: #c1c1c1;
+}
+section:nth-of-type(6) > div div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section:nth-of-type(6) > div div article {
+  width: calc(50% - 2rem);
+}
+footer {
+  background-color: #111111;
+  text-align: left;
+}
+footer > div {
+  width: 60%;
+  margin: 0 auto;
+  padding: 4rem 0;
+  color: #ffffff;
+}
+footer > div > div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+footer > div > div ul {
+  margin-left: 3rem;
+}
+footer > div > div a {
+  color: #f1720b;
+}
+footer > div p {
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 75%;
+  }
+  nav > div {
+    width: 100%;
+    margin: 0 auto;
+  }
+  header {
+    background-size: cover;
+    background-position: 30%;
+    background-repeat: no-repeat;
+  }
+  section > div,
+  footer > div {
+    width: 95%;
+    margin: 0 auto;
+  }
+  section > div article,
+  footer > div article {
+    min-width: 100%;
+    margin-bottom: 2rem;
+  }
+  section > div article:last-of-type,
+  footer > div article:last-of-type {
+    margin: 0;
+  }
+  section:nth-of-type(2) div,
+  footer:nth-of-type(2) div,
+  section:nth-of-type(3) div,
+  footer:nth-of-type(3) div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  footer > div img {
+    margin-bottom: 2rem;
+  }
+  footer > div > div ul {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 62.5%;
+  }
+}
