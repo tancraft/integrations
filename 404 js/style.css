@@ -1,49 +1,38 @@
 /*****root****/
 
 :root {
-	--darker-color: #040f16;
-	--lighter-color: #fbfbff;
-	--primary-color: #3185fc;
-	--error-color: #b80c09;
-	--valid-color: #17b890;
+  --darker-color: #040f16;
+  --lighter-color: #fbfbff;
+  --primary-color: #3185fc;
+  --error-color: #b80c09;
+  --valid-color: #17b890;
 
-	--font-family: "Press Start 2P", cursive;
-	--font-size: 16;
+  --font-family: "Press Start 2P", cursive;
+  --font-size: 16;
 }
 
 /*****reset****/
-*,
-::before,
-::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: var(--font-size);
-	font-family: var(--font-family);
-	text-align: center;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  text-align: center;
 }
 
 img {
-	width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 a,
 a:visited {
-	color: var(--darker-color);
-	text-decoration: none;
-}
-
-ul,
-ol {
-	list-style-type: none;
-}
-
-input {
-	outline: none;
-	border: none;
+  color: var(--darker-color);
+  text-decoration: none;
 }
 
 h1,
@@ -51,34 +40,33 @@ h2,
 h3,
 h4,
 h5 {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 label {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .container {
-	display: flex;
-	height: 100vh;
-	justify-content: center;
-	align-items: flex-start;
-	background: bottom / cover no-repeat
-		url("images/mario.png");
-	background-color: var(--darker-color);
-	color: var(--lighter-color);
-	font-size: 2rem;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  background: bottom / cover no-repeat url("images/mario.png");
+  background-color: var(--darker-color);
+  color: var(--lighter-color);
+  font-size: 2rem;
 }
 
 p {
-	margin-top: 10%;
-	max-width: 60%;
+  margin-top: 10%;
+  max-width: 60%;
 }
 
 @media screen and (max-width: 500px) {
-	.container {
-		font-size: 1rem;
+  .container {
+    font-size: 1rem;
     background-size: contain;
     align-items: center;
-	}
+  }
 }
