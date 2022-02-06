@@ -1,35 +1,60 @@
 /*----------------------------------mixins*/
-.flex {
+.center,
+section > div {
+  margin: 0 auto;
+}
+/*----------------------------------extension*/
+.imgSize,
+img,
+svg {
+  width: 100%;
+  height: auto;
+}
+.bcimg,
+.logo,
+section:last-of-type {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bc-center,
+.logo,
+section:last-of-type {
+  background-position: center;
+}
+.bc-custom {
+  background-position: 20% 0;
+}
+.flex,
+nav,
+nav ul,
+header,
+header article,
+section:first-of-type > div article,
+section:nth-of-type(2) > div article,
+section:last-of-type > div .galerie,
+footer,
+footer .sociaux,
+.ancre {
   display: flex;
   flex-wrap: wrap;
 }
+.mb,
+h1,
+p,
+h2,
+section:nth-of-type(2) > div article {
+  margin-bottom: 2rem;
+}
 /*-------------------------------------reset*/
-*,
-::before,
-::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-figure {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
 }
 html {
   font-size: 100%;
   font-family: "Changa", sans-serif;
   scroll-behavior: smooth;
-}
-img,
-video,
-canvas,
-figure,
-audio,
-svg {
-  max-width: 100%;
-  height: auto;
 }
 a,
 a:visited {
@@ -42,20 +67,24 @@ ol {
   list-style-type: none;
 }
 /*-------------------------------------layout*/
-.container,
-nav {
-  background-color: #0b090a;
+body {
+  background-image: url("../imgs/bcg_street.jpg");
+  background-attachment: fixed;
+}
+.cls-1 {
+  fill: #a4161a;
+}
+.cls-2 {
+  fill: #f5f3f4;
 }
 h1,
 p {
   font-size: 100%;
   font-weight: 300;
   line-height: 2rem;
-  margin-bottom: 2rem;
 }
 h2 {
   text-align: center;
-  margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 300;
   text-transform: uppercase;
@@ -88,91 +117,84 @@ ul li,
 .logo {
   display: inline-block;
   width: 10rem;
-  text-indent: -9999px;
-  background-image: url("../imgs/logo.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: auto;
 }
-main {
+.logo svg {
+  width: 100%;
+}
+#burger {
   position: relative;
+  display: none;
+  right: 2rem;
+  z-index: 1;
+  width: 2rem;
+  cursor: pointer;
+}
+#burger .trait {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 100%;
+  height: 0.3rem;
+  background-color: #f5f3f4;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+#burger .trait::before,
+#burger .trait::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0.3rem;
+  background-color: #f5f3f4;
+  border-radius: 2px;
+  transition: all 0.5s ease-in-out;
+}
+#burger .trait::before {
+  transform: translateY(-0.6rem);
+}
+#burger .trait::after {
+  transform: translateY(0.6rem);
+}
+#burger.active .trait {
+  transform: translateX(-50%);
+  background-color: transparent;
+}
+#burger.active .trait::before {
+  transform: translate(50%, 0rem) rotateZ(45deg);
+}
+#burger.active .trait::after {
+  transform: translate(50%, 0rem) rotateZ(-45deg);
 }
 nav {
-  position: fixed;
-  width: 100%;
-  padding: 2rem 0;
-  z-index: 10;
-}
-nav > div {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-nav > div ul {
-  display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
+  z-index: 5;
+  position: fixed;
+  padding: 1rem;
+  background-color: #0b090a;
+  width: 100%;
 }
-nav > div ul li a {
-  display: block;
-  padding: 0.4rem 1rem;
-  position: relative;
-}
-nav > div ul li a::after {
-  content: "";
-  display: block;
-  width: 90%;
-  height: 2px;
-  position: absolute;
-  left: 50%;
-  background-color: #f5f3f4;
-  transform: translateX(-50%) scaleX(0);
-  transition: 0.3s;
-}
-nav > div ul li a:hover::after {
-  transform: translateX(-50%) scaleX(1);
+nav ul li a {
+  padding: 0.5rem 2rem;
+  display: inline-block;
 }
 header {
+  justify-content: center;
   padding: 10rem 0;
-  background-image: url("../imgs/bcg_street.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background: linear-gradient(5deg, rgba(11, 9, 10, 0.5) 0%, #0b090a 84%);
 }
 header > div {
   width: 60%;
-  margin: 0 auto;
-  background: inherit;
 }
 header article {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   box-shadow: 0 0 0.62rem 0 rgba(11, 9, 10, 0.4);
   border-radius: 0.3rem;
   position: relative;
-  z-index: 1;
-  background: inherit;
-  overflow: hidden;
 }
-header article:before {
-  content: "";
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  inset: 0;
-  filter: blur(0.5rem);
-}
-header article figure {
-  width: calc(50% - 1rem);
-  min-height: 25rem;
-  background-image: url("../imgs/toby.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
+header article img {
+  display: block;
 }
 header article > div {
   padding: 1rem 2rem 1rem 1rem;
@@ -187,7 +209,6 @@ section {
 }
 section > div {
   width: 60%;
-  margin: 0 auto;
 }
 section:first-of-type {
   background-color: #f5f3f4;
@@ -196,8 +217,6 @@ section:first-of-type > div {
   padding: 2rem 0;
 }
 section:first-of-type > div article {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 section:first-of-type > div article > div {
@@ -220,16 +239,11 @@ section:nth-of-type(2) > div {
 section:nth-of-type(2) > div article {
   text-align: left;
   background-color: #a4161a;
-  margin-bottom: 2rem;
   border-radius: 1rem;
 }
 section:nth-of-type(2) > div article img {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
-}
-section:nth-of-type(2) > div article {
-  display: flex;
-  flex-wrap: wrap;
 }
 section:nth-of-type(2) > div article img {
   width: 50%;
@@ -255,16 +269,12 @@ section:nth-of-type(2) > div > .btn {
 section:last-of-type {
   background-image: url("../imgs/ben.jpg");
   background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 section:last-of-type > div {
   text-align: center;
   padding: 1rem;
   border-radius: 0.5rem;
   position: relative;
-  z-index: 1;
   background: inherit;
   overflow: hidden;
 }
@@ -272,35 +282,24 @@ section:last-of-type > div:before {
   content: "";
   position: absolute;
   background: inherit;
-  z-index: -1;
   inset: 0;
   filter: blur(0.5rem);
 }
 section:last-of-type > div .galerie {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 footer {
-  padding: 1rem;
+  padding: 1rem 0;
+  justify-content: space-around;
   background-color: #a4161a;
 }
-footer .sociaux {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1.5rem;
-}
 footer .sociaux li a {
-  padding: 0 1rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
 }
 .ancre {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  display: none;
-  z-index: 4;
   border: 1px solid #f5f3f4;
-  padding: 0.8rem;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -315,18 +314,10 @@ footer .sociaux li a {
   }
   header div {
     width: 95%;
-    margin: 0 auto;
-  }
-  header div article > div {
-    min-width: 100%;
-  }
-  header div article .btn {
-    position: static;
   }
   nav > div {
     justify-content: center;
     width: 100%;
-    margin: 0 auto;
     text-align: center;
   }
   nav > div ul {
@@ -335,25 +326,15 @@ footer .sociaux li a {
   }
   nav > div .logo {
     margin-right: 0;
-    margin-bottom: 1rem;
-  }
-  section:last-of-type {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 20% 0;
   }
   section:last-of-type > div {
     width: 95%;
-    margin: 0 auto;
   }
   section:last-of-type > div figure {
     display: none;
   }
   section:last-of-type > div > div {
     padding: 1rem;
-  }
-  section:last-of-type > div > div img {
-    margin-bottom: 2rem;
   }
   section:first-of-type div {
     min-width: 100%;
@@ -364,7 +345,6 @@ footer .sociaux li a {
   }
   section:nth-of-type(2) > div {
     width: 95%;
-    margin: 0 auto;
   }
   section:nth-of-type(2) > div article img {
     order: -3;
@@ -386,12 +366,31 @@ footer .sociaux li a {
   }
 }
 @media screen and (max-width: 600px) {
-  section:last-of-type {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 20% 0;
+  #burger {
+    display: block;
   }
-  .ancre {
-    display: inline-block;
+  #navbar {
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    transform: translateY(-100%);
+    width: 100%;
+    transition: 0.3s;
+    background-color: #a4161a;
+  }
+  #navbar li {
+    width: 100%;
+  }
+  #navbar li a {
+    width: 100%;
+  }
+  #navbar.open {
+    transform: translateY(0);
+  }
+  header > div article > div {
+    min-width: 100%;
   }
 }
