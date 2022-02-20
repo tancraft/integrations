@@ -1,0 +1,269 @@
+/*colors*/
+/*fonts*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v11/pe0oMImSLYBIv1o4X1M8cce4I94.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v11/pe0qMImSLYBIv1o4X1M8cfe6.ttf) format('truetype');
+}
+/*margin*/
+/*-------------------------------------reset*/
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 1rem;
+  font-family: "Nunito Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.5rem;
+}
+img,
+picture,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+canvas {
+  max-width: 100%;
+  max-height: 100vh;
+}
+a,
+a:visited {
+  color: 0 0% 15%;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+button,
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*-------------------------------------helpers*/
+.bc-dark,
+.colors > div :nth-child(1) div {
+  background-color: hsl(0, 0%, 15%);
+}
+.bc-white,
+.colors > div :nth-child(2) div {
+  background-color: hsl(0, 0%, 100%);
+}
+.bc-primary,
+.colors > div :nth-child(3) div {
+  background-color: hsl(178, 92%, 79%);
+}
+.text-dark,
+.colors > div :nth-child(3) div {
+  color: hsl(0, 0%, 15%);
+}
+.text-white,
+.btn,
+.colors > div :nth-child(1) div {
+  color: hsl(0, 0%, 100%);
+}
+.text-primary {
+  color: hsl(178, 92%, 79%);
+}
+.uppercase,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+.letter-spacing,
+.typo > div h1,
+.typo > div h2,
+.typo > div h3,
+.typo > div h4,
+.typo > div h5,
+.typo > div h6,
+.typo > div p {
+  letter-spacing: 0.1rem;
+}
+.d-flex,
+.colors > div,
+.typo > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.d-grid {
+  display: grid;
+}
+.d-block {
+  display: block;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.flow,
+.colors > div .color > div,
+.typo > div > div > * {
+  margin-bottom: 0.75rem;
+}
+.max-flow,
+section,
+header,
+.typo > div h1,
+.components .btn {
+  margin-bottom: 2rem;
+}
+.center,
+section > div {
+  max-width: 80%;
+  margin: 0 auto;
+}
+main {
+  width: 100%;
+}
+/*----------------------------------globals*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+/*-------------------------------components*/
+.btn {
+  background-color: hsl(178, 92%, 79%);
+  display: block;
+  width: fit-content;
+  padding: 1rem 3rem;
+  transition: 0.2s ease-in-out;
+}
+.btn:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0.1rem 0.1rem 0.2rem hsl(0 0% 15% / 0.22));
+}
+.play {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  background-color: hsl(178, 92%, 79%);
+  border-radius: 50%;
+  cursor: pointer;
+  filter: drop-shadow(0.2rem 0.2rem 0.65rem hsl(0 0% 15% / 0.2));
+  transition: filter 0.2s ease-in-out;
+}
+.play svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: hsl(0, 0%, 100%);
+}
+.play:hover {
+  filter: drop-shadow(0.3rem 0.3rem 0.75rem hsl(0 0% 15% / 0.22));
+}
+/*----------------------------------layout*/
+section {
+  padding: 2rem 0;
+}
+section > h2 {
+  margin: 0 auto 0.75rem;
+  max-width: 80%;
+}
+header {
+  padding: 4rem 0;
+}
+header h1 {
+  text-align: center;
+}
+.colors > div {
+  justify-content: space-between;
+}
+.colors > div .color {
+  width: calc((100% / 3) - 10px);
+  transition: width 0.2s;
+}
+.colors > div .color > div {
+  border: 1px solid black;
+  padding: 3rem 10px 10px;
+}
+.colors > div .color p {
+  font-size: 0.875rem;
+}
+.typo {
+  background-color: hsl(0 0% 15% / 0.05);
+}
+.typo > div > * {
+  width: calc(50% - 10px);
+}
+.typo > div h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+.typo > div h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.typo > div h3,
+.typo > div h4,
+.typo > div h5,
+.typo > div h6,
+.typo > div p {
+  color: hsl(0 0% 15% / 0.5);
+}
+@media screen and (max-width: 600px) {
+  .colors > div .color {
+    width: calc(50% - 10px);
+  }
+  .typo > div > * {
+    width: 100%;
+  }
+  .typo > div h1 {
+    font-size: 2rem;
+  }
+  .typo > div h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .typo > div {
+    text-align: center;
+  }
+  .colors > div .color {
+    width: 100%;
+  }
+}
