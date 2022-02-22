@@ -231,11 +231,11 @@ header h1 {
   width: calc(50% - 10px);
 }
 .typo > div h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   line-height: 2.5rem;
 }
 .typo > div h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .typo > div h3,
@@ -253,10 +253,10 @@ header h1 {
     width: 100%;
   }
   .typo > div h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .typo > div h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 360px) {
