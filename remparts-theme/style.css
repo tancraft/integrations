@@ -1,0 +1,766 @@
+/*!
+Theme Name: pizza des remparts
+Theme URI: https://tancraftwork.com
+Author: Tancraft
+Author URI: https://tancraftwork.com
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+*/
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiDyp8kv8JHgFVrJJLmy15lEA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLFj_V1s.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLDz8V1s.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLEj6V1s.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLCz7V1s.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Trirong';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/trirong/v9/7r3DqXNgp8wxdOdOl1QM_a4.ttf) format('truetype');
+}
+/*
+@color-secondary hue saturate brightness
+pour les couleurs de svg suivre cette optique lorsqu il sont dans  un e balise img
+filter: hue-rotate(27deg) saturate(64%) brightness(87%) sepia(1);
+*/
+/*margin*/
+/*-------------------------------------reset*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+img,
+video,
+figure,
+picture,
+audio,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+a,
+a:visited {
+  color: hsl(210, 8%, 5%);
+}
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+input,
+select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+/*-------------------------------------helpers*/
+.bc-dark {
+  background-color: hsl(210, 8%, 5%);
+}
+.bc-white,
+#burger .trait,
+#burger .trait::before,
+#burger .trait::after,
+#burger.active .trait::after,
+.btn::after,
+.hero > div,
+.container {
+  background-color: hsl(210, 30%, 96%);
+}
+.bc-primary,
+nav.main-nav,
+.hero h2,
+.topHome,
+.container footer,
+.carteRestau article table tbody .menu-card > figure .hero h4,
+.carteRestau article table tbody .menu-card > div .hero h4 {
+  background-color: hsl(2, 70%, 39%);
+}
+.bc-secondary {
+  background-color: hsl(42, 82%, 75%);
+}
+.text-dark,
+.btn:hover,
+.btn:hover:visited,
+.carteRestau article table thead th select option {
+  color: hsl(210, 8%, 5%);
+}
+.text-white,
+nav.main-nav div ul li a,
+nav.main-nav div ul li a:visited,
+.btn,
+.btn:visited,
+.container header,
+.carteRestau,
+.carteRestau .navCarte ul li a,
+.carteRestau .navCarte ul li a:visited,
+.carteRestau article table thead th select,
+.carteRestau article table tbody .menu-card > figure,
+.carteRestau article table tbody .menu-card > div,
+footer,
+footer a,
+footer:visited,
+footer a:visited {
+  color: hsl(210, 30%, 96%);
+}
+.text-primary {
+  color: hsl(2, 70%, 39%);
+}
+.text-secondary,
+.carteRestau .navCarte ul li a:hover,
+.carteRestau .navCarte ul li a:active,
+.carteRestau article table thead th h4,
+.carteRestau article table tbody tr td:last-of-type {
+  color: hsl(42, 82%, 75%);
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.letter-spacing,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.1rem;
+}
+.radius {
+  border-radius: calc(10px / 2);
+}
+.d-flex,
+.container,
+.carteRestau .navCarte ul,
+.carteRestau article table tbody .menu-card,
+.carteRestau article table tbody .menu-card > figure ul,
+.carteRestau article table tbody .menu-card > div ul,
+.infos > div,
+.locate > div,
+footer > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.d-grid {
+  display: grid;
+}
+.d-block {
+  display: block;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.flow {
+  margin-bottom: 0.75rem;
+}
+.max-flow {
+  margin-bottom: 4rem;
+}
+.center {
+  max-width: 60%;
+  margin: 0 auto;
+}
+main {
+  width: 100%;
+}
+/*----------------------------------globals*/
+h3,
+h4 {
+  font-family: "Trirong", serif;
+}
+h2 {
+  text-align: center;
+  font-size: 1.75rem;
+}
+/*----------------------------------navigation*/
+#burger {
+  position: relative;
+  display: none;
+  z-index: 4;
+  width: 2rem;
+  cursor: pointer;
+}
+#burger .trait {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+#burger .trait::before,
+#burger .trait::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 2px;
+  transition: all 0.5s ease-in-out;
+}
+#burger .trait::before {
+  transform: translateY(-0.6rem);
+}
+#burger .trait::after {
+  transform: translateY(0.6rem);
+}
+#burger.active .trait {
+  transform: translateX(-50%);
+  background-color: transparent;
+}
+#burger.active .trait::before {
+  transform: translate(50%, 0rem) rotateZ(45deg);
+}
+#burger.active .trait::after {
+  transform: translate(50%, 0rem) rotateZ(-45deg);
+}
+nav.main-nav {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  height: 100vh;
+  box-shadow: 0px -3px 3px hsl(210 8% 5% / 0.8);
+}
+nav.main-nav div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+nav.main-nav div ul li {
+  display: block;
+}
+nav.main-nav div ul li a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.5rem;
+  font-family: "Trirong", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+nav.main-nav div ul li a > span img {
+  width: 2rem;
+  height: 2rem;
+}
+nav.main-nav div ul li a > span > span {
+  display: inline-block;
+  padding-left: 0.5rem;
+  transition: transform 0.3s;
+}
+nav.main-nav div ul li a > span:hover > span {
+  transform: translateX(0.1rem);
+}
+nav.main-nav div ul li a > span:hover > img {
+  filter: hue-rotate(42deg) saturate(82%) brightness(75%) sepia(1);
+}
+.btn {
+  position: relative;
+  padding: 0.5rem 2.5rem;
+  width: fit-content;
+  border: 1px solid hsl(210, 30%, 96%);
+  font-size: 1.4rem;
+  z-index: 1;
+  display: inline-block;
+}
+.btn::after {
+  content: "";
+  z-index: -1;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 0.4s;
+}
+.btn:hover::after {
+  transform: scaleX(1);
+}
+.logo {
+  display: inline-block;
+  margin-bottom: 5rem;
+}
+.logo img {
+  width: 10rem;
+}
+.hero {
+  position: relative;
+  width: fit-content;
+  z-index: 1;
+}
+.hero h2 {
+  padding: 0.5rem 3rem;
+  font-size: 4rem;
+  font-weight: 700;
+  font-style: italic;
+  clip-path: polygon(2.5% 0, 100% 0, 97.5% 100%, 0 100%);
+  -webkit-clip-path: polygon(2.5% 0, 100% 0, 97.5% 100%, 0 100%);
+}
+.hero > div {
+  position: absolute;
+  top: 0.4rem;
+  left: -0.4rem;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(2.5% 0, 100% 0, 97.5% 100%, 0 100%);
+  -webkit-clip-path: polygon(2.5% 0, 100% 0, 97.5% 100%, 0 100%);
+}
+.topHome {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 50%;
+  animation: 0.5s btnHome;
+}
+.topHome svg {
+  display: block;
+  fill: hsl(210, 30%, 96%);
+}
+.topHome.scrolled {
+  display: block;
+}
+/*------------------------------animations*/
+@keyframes btnHome {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*------------------------------layout*/
+.container header {
+  padding: 15% 0;
+  min-height: 100vh;
+  background: linear-gradient(rgba(12, 13, 14, 0.7), rgba(12, 13, 14, 0.7)), url("assets/imgs/imgBcg-g.jpg");
+  background-size: cover;
+  text-align: right;
+}
+.container header > div {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+.container header > div h4 {
+  margin: 2rem 0 1rem;
+  font-size: 3rem;
+}
+.container header > div p,
+.container header > div .dateDuree {
+  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+}
+.container main {
+  width: 100%;
+}
+.container main h2 {
+  margin-bottom: 5rem;
+}
+.container section {
+  padding: 7rem 0;
+}
+.container section > div,
+.container section > article {
+  max-width: 60%;
+  margin: 0 auto;
+}
+.container footer {
+  width: 100%;
+}
+.carteRestau {
+  position: relative;
+  background: url("assets/imgs/chalkboard.png"), hsl(210, 8%, 5%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.carteRestau .navCarte {
+  z-index: 2;
+  margin-bottom: 3rem;
+  position: sticky;
+  background: inherit;
+  border-bottom: 2px solid hsl(210, 30%, 96%);
+}
+.carteRestau .navCarte ul {
+  max-width: 60%;
+  margin: 0 auto;
+  justify-content: space-between;
+  font-family: "Trirong", serif;
+  font-weight: 700;
+}
+.carteRestau .navCarte ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+.carteRestau .navCarte ul li a span img {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+}
+.carteRestau .navCarte ul li a:hover span img,
+.carteRestau .navCarte ul li a:active span img {
+  filter: hue-rotate(42deg) saturate(82%) brightness(75%) sepia(1);
+}
+.carteRestau article {
+  margin-bottom: 1.5rem;
+}
+.carteRestau article table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.carteRestau article table thead th {
+  border-bottom: 2px solid hsl(210, 30%, 96%);
+}
+.carteRestau article table thead th h4 {
+  text-align: left;
+  font-size: 1.4rem;
+}
+.carteRestau article table tbody tr {
+  border-bottom: 1px solid hsl(210, 30%, 96%);
+}
+.carteRestau article table tbody tr td h4 {
+  font-size: 1.2rem;
+}
+.carteRestau article table tbody tr td ul {
+  padding-bottom: 0.5rem;
+}
+.carteRestau article table tbody tr td ul li {
+  display: inline-block;
+}
+.carteRestau article table tbody tr td:first-of-type {
+  padding-left: 1rem;
+}
+.carteRestau article table tbody tr td:last-of-type {
+  text-align: center;
+}
+.carteRestau article table tbody .menu-card {
+  padding: 1rem;
+  border: 1px solid hsl(210, 30%, 96%);
+}
+.carteRestau article table tbody .menu-card > figure,
+.carteRestau article table tbody .menu-card > div {
+  padding: 0.8rem;
+  text-align: left;
+  width: 50%;
+}
+.carteRestau article table tbody .menu-card > figure .hero h4,
+.carteRestau article table tbody .menu-card > div .hero h4 {
+  padding: 0.5rem 2rem;
+  font-family: "Trirong", serif;
+  font-weight: 700;
+  font-style: italic;
+  clip-path: polygon(2.5% 0, 100% 0, 97.5% 100%, 0 100%);
+  -webkit-clip-path: polygon(2.5% 0, 100% 0, 97.5% 100%, 0 100%);
+}
+.carteRestau article table tbody .menu-card > figure ul,
+.carteRestau article table tbody .menu-card > div ul {
+  max-width: 70%;
+  margin: 1.5rem 0;
+}
+.carteRestau article table tbody .menu-card > figure ul li,
+.carteRestau article table tbody .menu-card > div ul li {
+  display: block;
+  padding: 1rem 0;
+}
+.carteRestau article table tbody .menu-card > figure span,
+.carteRestau article table tbody .menu-card > div span {
+  display: block;
+  text-align: right;
+}
+.carteRestau article table tbody .menu-card figure img {
+  display: block;
+}
+.infos h3 {
+  display: block;
+}
+.infos > article {
+  text-align: center;
+}
+.infos > article h1 {
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+.infos > div {
+  justify-content: space-between;
+}
+.infos > div article {
+  width: calc(33.3% - 1rem);
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid hsl(210, 8%, 5%);
+}
+.infos > div article img {
+  display: inline-block;
+  margin-bottom: 1rem;
+  width: 4rem;
+}
+.infos > div article p,
+.infos > div article ul {
+  text-align: left;
+}
+.infos > div article h3 {
+  margin-bottom: 1rem;
+}
+.locate > div ul,
+.locate > div figure {
+  width: 50%;
+}
+.locate > div ul li,
+.locate > div figure li {
+  line-height: 3rem;
+}
+.locate > div ul li svg,
+.locate > div figure li svg {
+  width: 1.3rem;
+  fill: hsl(210, 8%, 5%);
+  margin-right: 0.5rem;
+}
+.locate > div figure iframe {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+}
+footer {
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+footer a {
+  display: inline-block;
+}
+footer > p {
+  padding: 0.5rem 0;
+}
+footer > div {
+  padding: 1.5rem 0 0.5rem;
+  justify-content: space-around;
+  text-align: left;
+}
+footer > div ul li {
+  display: block;
+  padding: 0.5rem 0;
+}
+footer > div ul li a {
+  display: inline-block;
+}
+footer > div ul li a svg {
+  display: block;
+  width: 100%;
+  fill: hsl(210, 30%, 96%);
+}
+footer > div ul li a:hover svg {
+  fill: hsl(42, 82%, 75%);
+}
+footer > div .sociaux li a {
+  width: 1.5rem;
+}
+/*-----------------------------responsive*/
+@media screen and (max-width: 1400px) {
+  .container header {
+    padding: 20% 0;
+  }
+  .container header > div {
+    min-width: 80%;
+    margin: 0 auto;
+  }
+  .container main section > div,
+  .container main section > article {
+    min-width: 80%;
+    margin: 0 auto;
+  }
+  .carteRestau .navCarte ul {
+    min-width: 100%;
+  }
+  .carteRestau .navCarte ul li a {
+    font-size: 1.2rem;
+  }
+  .carteRestau article tbody tr td h4 {
+    font-size: 1.1rem;
+  }
+  .carteRestau article tbody tr td ul li {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .logo {
+    margin-bottom: 1.5rem;
+    width: 5rem;
+  }
+  #main-nav li a > span span {
+    display: none;
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+  .container header > div {
+    min-width: 90%;
+  }
+  .container main section > div,
+  .container main section > article {
+    min-width: 90%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .carteRestau .navCarte ul {
+    justify-content: space-around;
+  }
+  .carteRestau .navCarte ul li a > span img {
+    display: inline-block;
+  }
+  .carteRestau .navCarte ul li a > span span {
+    display: none;
+  }
+  .carteRestau article table tbody .menu-card .hero h4 {
+    font-size: 1rem;
+  }
+  .carteRestau article table tbody .menu-card > div ul {
+    margin: 1rem 0;
+  }
+  .carteRestau article table tbody .menu-card > div ul li {
+    padding: 0.5rem 0;
+  }
+  .infos > div article {
+    min-width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #burger {
+    display: block;
+  }
+  #main-nav {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 0;
+    transform: translateY(-100%);
+    transition: 0.5s;
+  }
+  #main-nav.open {
+    transform: translateY(0);
+  }
+  #main-nav li a {
+    padding: 0.5rem 1rem;
+  }
+  #main-nav li a > span span {
+    display: inline-block;
+  }
+  .logo {
+    margin-bottom: 0;
+  }
+  nav.main-nav {
+    min-width: 100%;
+    max-height: 5rem;
+  }
+  nav.main-nav div {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .container header {
+    min-height: unset;
+    padding: 5rem 0;
+    background: linear-gradient(rgba(12, 13, 14, 0.7), rgba(12, 13, 14, 0.7)), url("assets/imgs/imgBcg-s.jpg");
+    background-repeat: no-repeat;
+  }
+  .container header > div {
+    width: 95%;
+  }
+  .container header > div .hero h2 {
+    font-size: 2rem;
+  }
+  .container header > div h4 {
+    font-size: 1.5rem;
+  }
+  .container main section > div,
+  .container main section > article {
+    width: 95%;
+  }
+  .container .carteRestau .menu-card > div,
+  .container .carteRestau .menu-card > figure {
+    min-width: 100%;
+  }
+  .container .carteRestau .menu-card > div ul,
+  .container .carteRestau .menu-card > figure ul {
+    min-width: 90%;
+  }
+  .container .carteRestau .menu-card figure {
+    display: none;
+  }
+  .infos > div article h3 {
+    text-align: left;
+  }
+  .locate > div ul,
+  .locate > div figure {
+    min-width: 100%;
+  }
+  footer > div {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  footer > div ul {
+    min-width: 100%;
+  }
+}
