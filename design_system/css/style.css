@@ -1,269 +1,218 @@
-/*colors*/
-/*fonts*/
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf) format('truetype');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,300;0,400;0,600;1,300;1,500&display=swap");
+.bc-dark, .dark-theme, body {
+  background-color: hsl(197deg, 82%, 12%);
 }
-@font-face {
-  font-family: 'Nunito Sans';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunitosans/v11/pe0oMImSLYBIv1o4X1M8cce4I94.ttf) format('truetype');
+
+.bc-white, .light-theme {
+  background-color: hsl(0deg, 0%, 100%);
 }
-@font-face {
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunitosans/v11/pe0qMImSLYBIv1o4X1M8cfe6.ttf) format('truetype');
+
+.bc-light {
+  background-color: hsl(78deg, 8%, 96%);
 }
-/*margin*/
-/*-------------------------------------reset*/
-* {
-  margin: 0;
-  padding: 0;
+
+.bc-primary {
+  background-color: hsl(196deg, 40%, 58%);
 }
+
+.bc-titles {
+  background-color: hsl(197deg, 79%, 35%);
+}
+
+.bc-second {
+  background-color: hsl(120deg, 10%, 76%);
+}
+
+.text-dark, .card .color > h4, .light-theme p {
+  color: hsl(197deg, 82%, 12%);
+}
+
+.text-white {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.text-light, .card .color.bc-dark > h4, .card body.color > h4, .card .color.dark-theme > h4, .dark-theme p, body p {
+  color: hsl(78deg, 8%, 96%);
+}
+
+.text-primary {
+  color: hsl(196deg, 40%, 58%);
+}
+
+.text-titles, .light-theme h1,
+.light-theme h2,
+.light-theme h3,
+.light-theme h4,
+.light-theme h5 {
+  color: hsl(197deg, 79%, 35%);
+}
+
+.text-second, .dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5, body h1,
+body h2,
+body h3,
+body h4,
+body h5 {
+  color: hsl(120deg, 10%, 76%);
+}
+
+.uppercase, h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+.letter-spacing {
+  letter-spacing: 0.1rem;
+}
+
+.d-flex, .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-i-block {
+  display: inline-block;
+}
+
+.flow {
+  margin-bottom: 0.75rem;
+}
+
+.max-flow {
+  margin-bottom: 2rem;
+}
+
+.center, .logo, section > div {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
+
 html {
   font-size: 1rem;
-  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.5rem;
+  font-family: "Fira Sans", sans-serif;
   scroll-behavior: smooth;
 }
-body {
-  line-height: 1.5rem;
-}
+
 img,
 picture,
+canvas,
 svg {
   max-width: 100%;
-  height: auto;
+  max-height: 100vh;
   display: block;
 }
-canvas {
-  max-width: 100%;
-  max-height: 100vh;
-}
+
 a,
 a:visited {
-  color: 0 0% 15%;
+  color: hsl(197deg, 82%, 12%);
   text-decoration: none;
 }
+
 ul,
 ol {
   list-style: inside;
   list-style-type: none;
 }
+
 button,
 input {
   background-color: transparent;
   outline: none;
   border: none;
 }
+
 @media (prefers-reduced-motion: reduce) {
   *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
-/*-------------------------------------helpers*/
-.bc-dark,
-.colors > div :nth-child(1) div {
-  background-color: hsl(0, 0%, 15%);
-}
-.bc-white,
-.colors > div :nth-child(2) div {
-  background-color: hsl(0, 0%, 100%);
-}
-.bc-primary,
-.colors > div :nth-child(3) div {
-  background-color: hsl(178, 92%, 79%);
-}
-.text-dark,
-.colors > div :nth-child(3) div {
-  color: hsl(0, 0%, 15%);
-}
-.text-white,
-.btn,
-.colors > div :nth-child(1) div {
-  color: hsl(0, 0%, 100%);
-}
-.text-primary {
-  color: hsl(178, 92%, 79%);
-}
-.uppercase,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-}
-.letter-spacing,
-.typo > div h1,
-.typo > div h2,
-.typo > div h3,
-.typo > div h4,
-.typo > div h5,
-.typo > div h6,
-.typo > div p {
-  letter-spacing: 0.1rem;
-}
-.d-flex,
-.colors > div,
-.typo > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.d-grid {
-  display: grid;
-}
-.d-block {
-  display: block;
-}
-.d-inline-block {
-  display: inline-block;
-}
-.flow,
-.colors > div .color > div,
-.typo > div > div > * {
-  margin-bottom: 0.75rem;
-}
-.max-flow,
-section,
-header,
-.typo > div h1,
-.components .btn {
-  margin-bottom: 2rem;
-}
-.center,
-section > div {
-  max-width: 80%;
-  margin: 0 auto;
-}
-main {
-  width: 100%;
-}
-/*----------------------------------globals*/
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
-  font-family: "Montserrat", sans-serif;
+h5 {
+  font-weight: 400;
 }
-/*-------------------------------components*/
-.btn {
-  background-color: hsl(178, 92%, 79%);
-  display: block;
-  width: fit-content;
-  padding: 1rem 3rem;
-  transition: 0.2s ease-in-out;
+
+.title {
+  font-size: 3.5rem;
+  line-height: 5.25rem;
 }
-.btn:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0.1rem 0.1rem 0.2rem hsl(0 0% 15% / 0.22));
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: justify;
+  font-weight: 300;
+  color: hsl(78deg, 8%, 96%);
+  margin-bottom: 0.75rem;
 }
-.play {
-  position: relative;
-  width: 5rem;
-  height: 5rem;
-  background-color: hsl(178, 92%, 79%);
-  border-radius: 50%;
-  cursor: pointer;
-  filter: drop-shadow(0.2rem 0.2rem 0.65rem hsl(0 0% 15% / 0.2));
-  transition: filter 0.2s ease-in-out;
+
+.container {
+  width: 100%;
 }
-.play svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  fill: hsl(0, 0%, 100%);
-}
-.play:hover {
-  filter: drop-shadow(0.3rem 0.3rem 0.75rem hsl(0 0% 15% / 0.22));
-}
-/*----------------------------------layout*/
-section {
-  padding: 2rem 0;
-}
-section > h2 {
-  margin: 0 auto 0.75rem;
-  max-width: 80%;
-}
+
 header {
-  padding: 4rem 0;
+  padding: 30px 0;
 }
-header h1 {
+header .title {
   text-align: center;
 }
-.colors > div {
+
+section > div {
+  padding: 2rem 0;
+}
+section > div > h3 {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+.cards {
   justify-content: space-between;
 }
-.colors > div .color {
-  width: calc((100% / 3) - 10px);
-  transition: width 0.2s;
+
+.card {
+  padding: 1rem;
+  width: calc(33.3333333333% - 20px);
 }
-.colors > div .color > div {
-  border: 1px solid black;
-  padding: 3rem 10px 10px;
+.card .color {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+  min-height: 5rem;
 }
-.colors > div .color p {
-  font-size: 0.875rem;
+.card .color > h4 {
+  margin: 0;
 }
-.typo {
-  background-color: hsl(0 0% 15% / 0.05);
-}
-.typo > div > * {
-  width: calc(50% - 10px);
-}
-.typo > div h1 {
-  font-size: 3.5rem;
-  line-height: 2.5rem;
-}
-.typo > div h2 {
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-}
-.typo > div h3,
-.typo > div h4,
-.typo > div h5,
-.typo > div h6,
-.typo > div p {
-  color: hsl(0 0% 15% / 0.5);
-}
-@media screen and (max-width: 600px) {
-  .colors > div .color {
-    width: calc(50% - 10px);
-  }
-  .typo > div > * {
-    width: 100%;
-  }
-  .typo > div h1 {
-    font-size: 1.5rem;
-  }
-  .typo > div h2 {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 360px) {
-  .typo > div {
-    text-align: center;
-  }
-  .colors > div .color {
-    width: 100%;
-  }
-}
+.logo {
+  max-width: 50%;
+}/*# sourceMappingURL=style.css.map */
