@@ -215,4 +215,10 @@ section > div > h3 {
 }
 .logo {
   max-width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    min-width: calc(100% - 10px);
+  }
 }/*# sourceMappingURL=style.css.map */
