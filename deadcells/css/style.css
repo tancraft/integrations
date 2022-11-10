@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "berylium-bd";
+  src: url("../fonts/berylium/berylium-bd.otf") format("opentype"),
+    url("../fonts/berylium/berylium-bd.ttf") format("truetype");
+}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --darker-color: 16, 21, 36;
+  --lighter-color: 255, 255, 255;
+  --primary-color: 164, 2, 57;
+  --secondary-color: 223, 255, 254;
+  --text-color: 249, 207, 135;
+  --font-family: "Raleway", sans-serif;
+  --font-famyly-title: "berylium-bd", serif;
+  --font-size: 16px;
+  --rgb-dark: 16, 21, 36;
+  --gap: 1rem;
+}
+/*-------------------------------------reset*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
+}
+
+img,
+picture,
+canvas,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: inside;
+  list-style-type: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*----------------------------------mixins*/
+.center {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.half > * {
+  width: calc(50% - var(--gap));
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.section-pad {
+  padding: 1rem 0;
+}
+
+/*-------------------------------------layout*/
+
+body {
+  background-color: rgb(var(--darker-color));
+}
+
+h2,
+.main-nav a {
+  font-family: var(--font-famyly-title);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+h2, strong {
+  color: rgb(var(--primary-color));
+}
+
+h2 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+p {
+  color: rgb(var(--text-color));
+  margin-bottom: 1rem;
+}
+
+.blog p{
+  margin-bottom: .5rem;
+}
+
+.shadow {
+  box-shadow: 0px 0px 16px rgb(0 0 0 / 75%);
+}
+
+/*-------------------------------------navigation*/
+
+header {
+  justify-content: space-between;
+  position: sticky;
+  padding: 10px 20px;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background-color: rgba(var(--darker-color), 0.9);
+  box-shadow: 0px 0px 16px rgb(0 0 0 / 90%);
+}
+
+.main-nav ul {
+  align-items: center;
+}
+
+.main-nav a,
+.main-nav a:visited {
+  color: rgb(var(--secondary-color));
+  display: block;
+  padding: 0 8px;
+}
+
+.main-nav li a:hover, footer li a:hover {
+  color: rgb(var(--lighter-color));
+}
+
+.main-nav a svg {
+  fill: rgb(var(--secondary-color));
+}
+
+.main-nav a:hover svg:hover {
+  fill: rgb(var(--lighter-color));
+}
+
+.logo {
+  display: block;
+  width: 8rem;
+}
+
+#burger {
+  display: none;
+}
+
+/*-------------------------------------content*/
+
+.buy {
+  padding: 2.5rem 0;
+  width: 100%;
+  background-image: url("../imgs/headerBanner.jpg");
+  background-size: cover;
+  padding: 3.5rem 0;
+}
+
+.video-container{
+  gap: 1rem;
+}
+
+/*cas des iframe de yt grrr*/
+.vid-yt {
+  width: 65%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.vid-yt::after {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: calc(315 / 560 * 100%);
+}
+
+.vid-yt iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/*-------------------------------------footer*/
+
+footer{
+  padding: 1rem 0;
+  font-weight: 200;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) 12px);
+}
+
+footer > div div{
+  padding: 1rem 2.2rem;
+}
+
+footer p, footer ul li a {
+  font-size: .9rem;
+  color: rgba(var(--lighter-color), 0.6);
+}
+
+footer div p, footer div img{
+  margin-bottom: .4rem;
+}
+
+footer strong{
+  font-weight: 400;
+  color: rgb(var(--lighter-color));
+}
+
+/*-------------------------------------responsive*/
+
+@media screen and (max-width: 600px) {
+}

@@ -1,0 +1,3 @@
+typo
+
+linear-gradient(to bottom, #d1394e 50%, #cd2f46 50%);

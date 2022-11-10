@@ -34,9 +34,8 @@ $dataCss = ':root{
   --darker-color: #34373b;
   --lighter-color: #eeeeee;
   --primary-color: #32e0c4;
-  --icons-color: #828282;
   --font-family: Arial, sans-serif;
-  --font-size: 100%;
+  --font-size: 16px;
   }
   
   /*-------------------------------------reset*/
@@ -95,7 +94,9 @@ $dataCss = ':root{
     .flex {
       display: flex;
       flex-wrap: wrap;
-    }';
+    }
+    /*-------------------------------------layout*/
+';
 
 $dataJs = 'const body = document.querySelector("main");
 let element = document.createElement("div");
