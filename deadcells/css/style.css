@@ -1,9 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+
 @font-face {
   font-family: "berylium-bd";
   src: url("../fonts/berylium/berylium-bd.otf") format("opentype"),
     url("../fonts/berylium/berylium-bd.ttf") format("truetype");
 }
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "atc";
+  src: url("../fonts/atc/ATC-Krueger-Bold.ttf") format("truetype"),
+    url("../fonts/atc/ATC-Krueger-Bold.woff") format("webfont");
+}
 
 :root {
   --darker-color: 16, 21, 36;
@@ -53,6 +60,13 @@ ol {
   list-style-type: none;
 }
 
+button,
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -80,11 +94,11 @@ ol {
 }
 
 .gap {
-  gap: 1rem;
+  gap: var(--gap);
 }
 
 .section-pad {
-  padding: 1rem 0;
+  padding: var(--gap) 0;
 }
 
 /*-------------------------------------layout*/
@@ -95,27 +109,28 @@ body {
 
 h2,
 .main-nav a {
-  font-family: var(--font-famyly-title);
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-family: var(--font-famyly-title);
 }
 
-h2, strong {
+h2,
+strong {
   color: rgb(var(--primary-color));
 }
 
 h2 {
+  margin-bottom: var(--gap);
   text-align: center;
   font-size: 4rem;
 }
 
 p {
+  margin-bottom: var(--gap);
   color: rgb(var(--text-color));
-  margin-bottom: 1rem;
 }
 
-.blog p{
-  margin-bottom: .5rem;
+.blog p {
+  margin-bottom: 0.5rem;
 }
 
 .shadow {
@@ -128,7 +143,7 @@ header {
   justify-content: space-between;
   position: sticky;
   padding: 10px 20px;
-  z-index: 1;
+  z-index: 1; /*merci yt*/
   top: 0;
   width: 100%;
   background-color: rgba(var(--darker-color), 0.9);
@@ -141,12 +156,13 @@ header {
 
 .main-nav a,
 .main-nav a:visited {
-  color: rgb(var(--secondary-color));
   display: block;
   padding: 0 8px;
+  color: rgb(var(--secondary-color));
 }
 
-.main-nav li a:hover, footer li a:hover {
+.main-nav li a:hover,
+footer li a:hover {
   color: rgb(var(--lighter-color));
 }
 
@@ -163,8 +179,52 @@ header {
   width: 8rem;
 }
 
+/*icone burger*/
+
 #burger {
   display: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.spline {
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  width: 100%;
+  height: 4px;
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  background-color: rgb(var(--text-color));
+}
+
+.spline::before,
+.spline::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: rgb(var(--text-color));
+}
+
+.spline::before {
+  transform: translateY(-8px);
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  -o-transform: translateY(-8px);
+}
+
+.spline::after {
+  transform: translateY(8px);
+  -webkit-transform: translateY(8px);
+  -moz-transform: translateY(8px);
+  -ms-transform: translateY(8px);
+  -o-transform: translateY(8px);
 }
 
 /*-------------------------------------content*/
@@ -177,15 +237,29 @@ header {
   padding: 3.5rem 0;
 }
 
-.video-container{
-  gap: 1rem;
+.buy > form {
+  text-align: center;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.8rem 4rem 0.4rem;
+  font-family: "atc";
+  font-size: 3.75rem;
+  font-weight: bold;
+  color: rgb(var(--lighter-color));
+  background: linear-gradient(to bottom, #d1394e 50%, #cd2f46 50%);
+  border-bottom: 8px solid #832154;
+}
+
+.btn {
 }
 
 /*cas des iframe de yt grrr*/
 .vid-yt {
   width: 65%;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: var(--gap);
 }
 
 .vid-yt::after {
@@ -205,26 +279,32 @@ header {
 
 /*-------------------------------------footer*/
 
-footer{
-  padding: 1rem 0;
+footer {
+  padding: var(--gap) 0;
   font-weight: 200;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) 12px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.5) 12px
+  );
 }
 
-footer > div div{
-  padding: 1rem 2.2rem;
+footer > div div {
+  padding: var(--gap) 2.2rem;
 }
 
-footer p, footer ul li a {
-  font-size: .9rem;
+footer p,
+footer ul li a {
+  font-size: 0.9rem;
   color: rgba(var(--lighter-color), 0.6);
 }
 
-footer div p, footer div img{
-  margin-bottom: .4rem;
+footer div p,
+footer div img {
+  margin-bottom: 0.4rem;
 }
 
-footer strong{
+footer strong {
   font-weight: 400;
   color: rgb(var(--lighter-color));
 }
@@ -232,4 +312,7 @@ footer strong{
 /*-------------------------------------responsive*/
 
 @media screen and (max-width: 600px) {
+  .center {
+    width: 95%;
+  }
 }

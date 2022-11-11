@@ -1,0 +1,73 @@
+:root{
+  --darker-color: #34373b;
+  --lighter-color: #eeeeee;
+  --primary-color: #32e0c4;
+  --font-family: Arial, sans-serif;
+  --font-size: 16px;
+  }
+  
+  /*-------------------------------------reset*/
+  *,
+  ::before,
+  ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    scroll-behavior: smooth;
+  }
+  
+  img,
+  picture,
+  canvas,
+  svg {
+    display: block; 
+    max-width: 100%;
+    max-height: 100vh;
+  }
+  
+  a,
+  a:visited {
+    color: var(--darker-color);
+    text-decoration: none;
+  }
+  
+  ul,
+  ol {
+    list-style: inside;
+    list-style-type: none;
+  }
+  
+  button,
+  input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+    /*----------------------------------mixins*/
+    .center {
+      width: 60%;
+      margin: 0 auto;
+    }
+    
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    /*-------------------------------------layout*/

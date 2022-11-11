@@ -73,6 +73,13 @@ $dataCss = ':root{
     list-style: inside;
     list-style-type: none;
   }
+  
+  button,
+  input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     *,
