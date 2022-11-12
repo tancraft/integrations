@@ -17,6 +17,7 @@
   --lighter-color: 255, 255, 255;
   --primary-color: 164, 2, 57;
   --secondary-color: 223, 255, 254;
+  --tertiary-color: 131, 33, 84;
   --text-color: 249, 207, 135;
   --font-family: "Raleway", sans-serif;
   --font-famyly-title: "berylium-bd", serif;
@@ -123,12 +124,46 @@ strong {
 }
 
 h2 {
+  /* position: relative; */
+  display: inline-block;
   margin-bottom: var(--gap);
   text-align: center;
   font-size: 4rem;
+  width: 100%;
 }
 
-p {
+h2::before,
+h2::after {
+  position: relative;
+  vertical-align: middle;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  width: 10%;
+}
+
+h2::before {
+  right: 0.25rem;
+  margin-left: -50%;
+  background: linear-gradient(
+    to right,
+    rgba(164, 2, 57, 0),
+    rgba(164, 2, 57, 0.5)
+  );
+}
+
+h2::after {
+  left: 0.25rem;
+  margin-right: -50%;
+  background: linear-gradient(
+    to left,
+    rgba(164, 2, 57, 0),
+    rgba(164, 2, 57, 0.5)
+  );
+}
+
+p,
+label {
   margin-bottom: var(--gap);
   color: rgb(var(--text-color));
 }
@@ -270,6 +305,10 @@ footer li a:hover {
 
 /*-------------------------------------content*/
 
+main {
+  padding-bottom: 3rem;
+}
+
 .buy {
   padding: 5rem 0 2rem;
   width: 100%;
@@ -277,22 +316,31 @@ footer li a:hover {
   background-size: cover;
 }
 
-.buy > form {
+form {
   text-align: center;
 }
 
-.cta {
+.btn {
   display: inline-block;
   padding: 0.8rem 4rem 0.4rem;
+  width: 350px;
   font-family: "atc";
-  font-size: 3.75rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: rgb(var(--lighter-color));
-  background: linear-gradient(to bottom, #d1394e 50%, #cd2f46 50%);
-  border-bottom: 8px solid #832154;
+  color: rgb(var(--text-color));
+  background-color: rgba(var(--primary-color), 0.7);
 }
 
-.btn {
+.btn:not(.btn.cta) {
+  padding: 0.8rem 4rem;
+  margin-top: 2rem;
+}
+
+.cta {
+  font-size: 3.75rem;
+  color: rgb(var(--lighter-color));
+  background: linear-gradient(to bottom, #d1394e 50%, #cd2f46 50%);
+  border-bottom: 8px solid rgb(var(--tertiary-color));
 }
 
 /*cas des iframe de yt grrr*/
@@ -317,6 +365,40 @@ footer li a:hover {
   left: 0;
 }
 
+/*fin yt*/
+
+.excerpt {
+  padding-bottom: 2.5rem;
+}
+
+.excerpt > div {
+  padding: var(--gap);
+  background-color: rgba(var(--tertiary-color), 0.35);
+  border-bottom: 1px solid rgb(var(--tertiary-color));
+}
+
+.excerpt a {
+  font-size: 2rem;
+  color: rgb(var(--primary-color));
+}
+
+form .center {
+  width: 80%;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  border: 0.5px solid rgb(var(--text-color));
+}
+
 /*-------------------------------------footer*/
 
 footer {
@@ -329,7 +411,7 @@ footer {
   );
 }
 
-footer > div{
+footer > div {
   justify-content: space-between;
 }
 
@@ -347,7 +429,7 @@ footer ul li a {
 footer ul li {
   display: flex;
   align-items: center;
-  gap: calc(var(--gap) * 0.2)
+  gap: calc(var(--gap) * 0.2);
 }
 
 footer ul li img {
@@ -369,6 +451,10 @@ footer strong {
 @media screen and (max-width: 800px) {
   .center {
     width: 95%;
+  }
+
+  h2 {
+    font-size: 2.5rem;
   }
 
   .logo {
@@ -407,10 +493,12 @@ footer strong {
   #navbar ul:first-of-type {
     flex-direction: column;
   }
+
   #navbar ul:last-of-type {
     justify-content: center;
     padding-top: var(--gap);
   }
+
   #burger {
     display: block;
   }
@@ -418,10 +506,12 @@ footer strong {
   .half > * {
     min-width: 100%;
   }
+
   .gap :not(.video-container) {
     gap: 0;
   }
+
   footer > div div {
-  padding: var(--gap) 0;
-}
+    padding: var(--gap) 0;
+  }
 }
