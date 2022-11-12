@@ -60,6 +60,10 @@ ol {
   list-style-type: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 button,
 input {
   background-color: transparent;
@@ -138,43 +142,50 @@ p {
 }
 
 /*-------------------------------------navigation*/
+.container {
+  overflow: hidden;
+}
 
 header {
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   padding: 10px 20px;
-  z-index: 1; /*merci yt*/
   top: 0;
+  z-index: 1; /*merci yt*/
   width: 100%;
   background-color: rgba(var(--darker-color), 0.9);
-  box-shadow: 0px 0px 16px rgb(0 0 0 / 90%);
 }
 
-.main-nav ul {
+#navbar ul {
   align-items: center;
 }
 
-.main-nav a,
-.main-nav a:visited {
+#navbar a,
+#navbar a:visited {
   display: block;
   padding: 0 8px;
   color: rgb(var(--secondary-color));
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
 }
 
-.main-nav li a:hover,
+#navbar li a:hover,
 footer li a:hover {
   color: rgb(var(--lighter-color));
 }
 
-.main-nav a svg {
+#navbar a svg {
   fill: rgb(var(--secondary-color));
 }
 
-.main-nav a:hover svg:hover {
+#navbar a:hover svg:hover {
   fill: rgb(var(--lighter-color));
 }
 
-.logo {
+.logo a {
   display: block;
   width: 8rem;
 }
@@ -200,6 +211,11 @@ footer li a:hover {
   -ms-transform: translateY(50%);
   -o-transform: translateY(50%);
   background-color: rgb(var(--text-color));
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 .spline::before,
@@ -209,6 +225,11 @@ footer li a:hover {
   width: 100%;
   height: 4px;
   background-color: rgb(var(--text-color));
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 
 .spline::before {
@@ -227,14 +248,33 @@ footer li a:hover {
   -o-transform: translateY(8px);
 }
 
+#burger.active .spline {
+  transform: translateX(-50%);
+  background-color: transparent;
+}
+
+#burger.active .spline:before {
+  transform: translate(50%, 0rem) rotateZ(45deg);
+  -webkit-transform: translate(50%, 0rem) rotateZ(45deg);
+  -moz-transform: translate(50%, 0rem) rotateZ(45deg);
+  -ms-transform: translate(50%, 0rem) rotateZ(45deg);
+  -o-transform: translate(50%, 0rem) rotateZ(45deg);
+}
+#burger.active .spline:after {
+  transform: translate(50%, 0rem) rotateZ(-45deg);
+  -webkit-transform: translate(50%, 0rem) rotateZ(-45deg);
+  -moz-transform: translate(50%, 0rem) rotateZ(-45deg);
+  -ms-transform: translate(50%, 0rem) rotateZ(-45deg);
+  -o-transform: translate(50%, 0rem) rotateZ(-45deg);
+}
+
 /*-------------------------------------content*/
 
 .buy {
-  padding: 2.5rem 0;
+  padding: 5rem 0 2rem;
   width: 100%;
   background-image: url("../imgs/headerBanner.jpg");
   background-size: cover;
-  padding: 3.5rem 0;
 }
 
 .buy > form {
@@ -257,9 +297,9 @@ footer li a:hover {
 
 /*cas des iframe de yt grrr*/
 .vid-yt {
-  width: 65%;
   position: relative;
-  margin-bottom: var(--gap);
+  width: 65%;
+  margin-bottom: 2rem;
 }
 
 .vid-yt::after {
@@ -289,18 +329,33 @@ footer {
   );
 }
 
-footer > div div {
-  padding: var(--gap) 2.2rem;
+footer > div{
+  justify-content: space-between;
 }
 
 footer p,
 footer ul li a {
   font-size: 0.9rem;
   color: rgba(var(--lighter-color), 0.6);
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+footer ul li {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gap) * 0.2)
+}
+
+footer ul li img {
+  height: 1.6rem;
 }
 
 footer div p,
-footer div img {
+footer div > img {
   margin-bottom: 0.4rem;
 }
 
@@ -311,8 +366,62 @@ footer strong {
 
 /*-------------------------------------responsive*/
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .center {
     width: 95%;
   }
+
+  .logo {
+    order: 1;
+  }
+
+  #navbar {
+    position: fixed;
+    flex-direction: column;
+    padding: 1.5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(var(--darker-color));
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    box-shadow: 0px 0px 16px rgb(0 0 0 / 75%);
+  }
+
+  #navbar.open {
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+  }
+
+  #navbar ul:first-of-type {
+    flex-direction: column;
+  }
+  #navbar ul:last-of-type {
+    justify-content: center;
+    padding-top: var(--gap);
+  }
+  #burger {
+    display: block;
+  }
+
+  .half > * {
+    min-width: 100%;
+  }
+  .gap :not(.video-container) {
+    gap: 0;
+  }
+  footer > div div {
+  padding: var(--gap) 0;
+}
 }
