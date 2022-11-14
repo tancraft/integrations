@@ -27,8 +27,8 @@ $dataHtml .= "\n\t" . '<script src="js/app.js"></script>
 </body>
 </html>';
 
-mkdir('./' . $chemin, 0777, true);
-file_put_contents('./' . $chemin . 'index.html', $dataHtml);
+mkdir('./../' . $chemin, 0777, true);
+file_put_contents('./../' . $chemin . 'index.html', $dataHtml);
 
 $dataCss = ':root{
   --darker-color: #34373b;
@@ -116,6 +116,6 @@ $dataSvg= '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/s
 $arbo = ['js' => ['app.js', $dataJs], 'css' => ['style.css', $dataCss],'imgs'=>['logo.svg',$dataSvg]];
 
 foreach ($arbo as $key => $elt) {
-    mkdir('./' . $chemin . $key . '/', 0777, true);
-    file_put_contents('./' . $chemin . $key . '/' . $elt[0], $elt[1]);
+    mkdir('./../' . $chemin . $key . '/', 0777, true);
+    file_put_contents('./../' . $chemin . $key . '/' . $elt[0], $elt[1]);
 }
