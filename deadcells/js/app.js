@@ -3,7 +3,7 @@ class ToggleMenu {
     this.burger =
       document.getElementById(burger) || document.getElementById("burger");
     this.navbar =
-      document.getElementById(navbar) || document.getElementById("navbar");;
+      document.getElementById(navbar) || document.getElementById("navbar");
     this.navlinks = document.querySelectorAll(`#${navbar} li a`);
     this.screenSize = screenSize || 800;
   }
