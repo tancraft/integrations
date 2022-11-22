@@ -27,7 +27,7 @@ html {
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   color: var(--primary-color);
-  line-height: 1.6rem;
+  line-height: 1.4rem;
   text-align: center;
 }
 
@@ -149,7 +149,7 @@ nav {
 header {
   padding: 10rem 0;
   background-image: url("../imgs/hero-bg.png");
-  background-position: center;
+  background-position: fixed;
   background-size: cover;
 }
 
@@ -267,7 +267,7 @@ form {
 }
 input {
   display: block;
-  padding: 0.8rem 2rem;
+  padding: 0.6rem 2rem;
   width: 70%;
     background-color: rgba(196,196,180,.3);
 }
@@ -279,7 +279,7 @@ input {
 button {
   display: block;
   font-family: var(--font-title);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
   background-color: var(--lighter-color);
@@ -310,4 +310,8 @@ footer > div {
   .vid-yt {
     min-width: 100%;
   }
+
+  button {
+  font-size: 1rem;
+}
 }
