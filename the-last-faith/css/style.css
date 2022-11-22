@@ -119,9 +119,35 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 0) 31%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.btn,
+.btn:visited {
+  padding: 0.6rem 2rem;
+  margin-bottom: 1rem;
+  display: block;
+  border: 2px solid white;
+  color: var(--white-color);
+  font-size: 1.8rem;
+}
+.links {
+  margin: 0 auto;
+  width: fit-content;
+  transform: translateY(-60%);
+  -webkit-transform: translateY(-60%);
+  -moz-transform: translateY(-60%);
+  -ms-transform: translateY(-60%);
+  -o-transform: translateY(-60%);
 }
 
 header {
+  padding: 10rem 0;
   background-image: url("../imgs/hero-bg.png");
   background-position: center;
   background-size: cover;
@@ -149,7 +175,7 @@ article {
   text-align: left;
 }
 
-.img,
+.img:not(header .img),
 article {
   max-width: calc(50% - var(--gap));
 }
@@ -157,9 +183,10 @@ article {
 .sociaux a {
   display: block;
   min-width: 48px;
+  margin-top: 1rem;
 }
 
-/*youtube*/
+/* youtube */
 .vid-yt {
   position: relative;
   width: 50%;
@@ -181,11 +208,104 @@ article {
   left: 0;
 }
 
+/* fin youtube */
+
+.description {
+  padding: 4rem 0;
+  background-image: url("../imgs/bg-section-0.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.gallery .flex,
+.features .flex {
+  justify-content: space-between;
+}
+
+.game {
+  padding: 4rem 0 8rem;
+  background-image: url("../imgs/bg-section-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.features {
+  padding: 4rem 0;
+  background-image: url("../imgs/bg-section-2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.gallery {
+  padding: 4rem 0;
+  background-image: url("../imgs/bg-section-3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-join {
+  padding: 4rem 0;
+  background-image: url("../imgs/bg-section-0.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-join p {
+  margin-bottom: 2rem;
+}
+
+.sociaux {
+  justify-content: center;
+}
+form {
+  display: flex;
+}
+input {
+  display: block;
+  padding: 0.8rem 2rem;
+  width: 70%;
+    background-color: rgba(196,196,180,.3);
+}
+::placeholder {
+  color: var(--lighter-color);
+  font-family: var(--font-title);
+}
+
+button {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--lighter-color);
+  width: 30%;
+}
+
+footer {
+  padding: 10rem 0;
+  background-image: url("../imgs/mist_optimize.png");
+  background-size: cover;
+  background-position: 50% 20%;
+}
+
+footer > div {
+  justify-content: center;
+}
+
 @media screen and (max-width: 600px) {
   .center {
     width: 90%;
   }
-  .img,
+
+  article {
+    text-align: center;
+  }
+  .img:not(footer .img),
   article,
   .vid-yt {
     min-width: 100%;
