@@ -221,7 +221,7 @@ header article {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  box-shadow: 0 0 0.62rem 0 rgba(11, 9, 10, 0.4);
+  box-shadow: 6px 6px 12px 0 rgba(11, 9, 10, 0.5), inset 6px 6px 12px 0 rgba(255, 255, 255, 0.3), inset -6px -6px 12px 0 rgba(255, 255, 255, 0.3);
   border-radius: 0.3rem;
   position: relative;
   z-index: 1;
@@ -234,7 +234,7 @@ header article:before {
   background: inherit;
   z-index: -1;
   inset: 0;
-  filter: blur(0.5rem);
+  filter: blur(3px);
 }
 header article figure {
   background-size: cover;

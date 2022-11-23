@@ -247,7 +247,9 @@ header {
   article {
     .flex;
     justify-content: space-between;
-    box-shadow: 0 0 0.62rem 0 rgba(11, 9, 10, 0.4);
+    box-shadow: 6px 6px 12px 0 rgba(11, 9, 10, 0.5),
+      inset 6px 6px 12px 0 rgba(255, 255, 255, 0.3),
+      inset -6px -6px 12px 0 rgba(255, 255, 255, 0.3);
     border-radius: 0.3rem;
     position: relative;
     z-index: 1;
@@ -259,7 +261,7 @@ header {
       background: inherit;
       z-index: -1;
       inset: 0;
-      filter: blur(0.5rem);
+      filter: blur(3px);
     }
     figure {
       .bcimg(cover, top);
@@ -378,7 +380,7 @@ section {
   width: 100%;
   figure {
     max-width: 60%;
-    margin: .5rem;
+    margin: 0.5rem;
     img {
       width: 100%;
       height: 100%;
@@ -389,7 +391,7 @@ section {
   ul {
     justify-content: center;
     gap: 10px;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     li {
       max-width: 3rem;
     }
@@ -431,7 +433,7 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-size: 2rem;
     &:extend(.text-white);
   }
@@ -532,22 +534,22 @@ footer {
   }
 
   nav {
-  > div {
-    ul {
-      li {
-        a {
-          font-size: 2rem;
-          &::after {
-            width: 20%;
+    > div {
+      ul {
+        li {
+          a {
+            font-size: 2rem;
+            &::after {
+              width: 20%;
+            }
           }
         }
       }
     }
+    &.scrolled {
+      .bc-dark;
+    }
   }
-  &.scrolled {
-    .bc-dark;
-  }
-}
 
   nav {
     &:extend(.bc-dark);
