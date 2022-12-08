@@ -283,19 +283,19 @@ footer li a:hover {
   -o-transform: translateY(8px);
 }
 
-#burger.active .spline {
+#burger.open .spline {
   transform: translateX(-50%);
   background-color: transparent;
 }
 
-#burger.active .spline:before {
+#burger.open .spline:before {
   transform: translate(50%, 0rem) rotateZ(45deg);
   -webkit-transform: translate(50%, 0rem) rotateZ(45deg);
   -moz-transform: translate(50%, 0rem) rotateZ(45deg);
   -ms-transform: translate(50%, 0rem) rotateZ(45deg);
   -o-transform: translate(50%, 0rem) rotateZ(45deg);
 }
-#burger.active .spline:after {
+#burger.open .spline:after {
   transform: translate(50%, 0rem) rotateZ(-45deg);
   -webkit-transform: translate(50%, 0rem) rotateZ(-45deg);
   -moz-transform: translate(50%, 0rem) rotateZ(-45deg);
